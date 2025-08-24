@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.7px Arial; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;title&gt;Grade 5: First Day Interactive Plan&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;!-- Chosen Palette: Calm Harmony (Warm Neutrals with Soft Blue Accent) --&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;!-- Application Structure Plan: A single-page, vertical timeline/agenda structure. A fixed side navigation allows the teacher to quickly jump to any part of the day's plan. Key details for activities are hidden in interactive modals or expandable sections to keep the main view clean and scannable. This structure was chosen because it mirrors the chronological flow of the lesson plan, making it highly intuitive for a teacher to follow in real-time during a busy day. --&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;!-- Visualization &amp; Content Choices: Report Info: Marshmallow Challenge Rules -&gt; Goal: Inform/Instruct -&gt; Presentation: Button-triggered Modal -&gt; Interaction: Click to reveal details -&gt; Justification: Hides lengthy text, keeping the main timeline clean. | Report Info: Interview Questions -&gt; Goal: Inform/Provide Resource -&gt; Presentation: Button-triggered Modal -&gt; Interaction: Click to view questions -&gt; Justification: Acts as a digital, on-demand reference sheet. | Report Info: Materials List -&gt; Goal: Inform/Prepare -&gt; Presentation: Collapsible section at the top -&gt; Interaction: Click to expand/collapse -&gt; Justification: Provides easy, upfront access to all required materials without cluttering the main plan. All visuals are created with HTML/CSS/Unicode. CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. --&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. --&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;style&gt;</span></p>
+<p class="p1"><span class="s1">        body {</span></p>
+<p class="p1"><span class="s1">            font-family: 'Inter', sans-serif;</span></p>
+<p class="p1"><span class="s1">            background-color: #F5F5F4; /* stone-100 */</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p1"><span class="s1">        .timeline-item::before {</span></p>
+<p class="p1"><span class="s1">            content: '';</span></p>
+<p class="p1"><span class="s1">            position: absolute;</span></p>
+<p class="p1"><span class="s1">            left: -2.6rem;</span></p>
+<p class="p1"><span class="s1">            top: 0.8rem;</span></p>
+<p class="p1"><span class="s1">            width: 1.25rem;</span></p>
+<p class="p1"><span class="s1">            height: 1.25rem;</span></p>
+<p class="p1"><span class="s1">            background-color: #3B82F6; /* blue-500 */</span></p>
+<p class="p1"><span class="s1">            border-radius: 9999px;</span></p>
+<p class="p1"><span class="s1">            border: 4px solid #F5F5F4;</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p1"><span class="s1">        .timeline-line {</span></p>
+<p class="p1"><span class="s1">            position: absolute;</span></p>
+<p class="p1"><span class="s1">            left: -2rem;</span></p>
+<p class="p1"><span class="s1">            top: 1rem;</span></p>
+<p class="p1"><span class="s1">            bottom: 0;</span></p>
+<p class="p1"><span class="s1">            width: 2px;</span></p>
+<p class="p1"><span class="s1">            background-color: #D6D3D1; /* stone-300 */</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p1"><span class="s1">        section:last-child .timeline-line {</span></p>
+<p class="p1"><span class="s1">            display: none;</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p1"><span class="s1">        .modal-backdrop {</span></p>
+<p class="p1"><span class="s1">            transition: opacity 0.3s ease-in-out;</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p1"><span class="s1">        .modal-content {</span></p>
+<p class="p1"><span class="s1">            transition: transform 0.3s ease-in-out;</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p1"><span class="s1">    &lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body class="text-stone-800"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">    &lt;div class="container mx-auto p-4 md:p-8 max-w-5xl"&gt;</span></p>
+<p class="p1"><span class="s1">        &lt;header class="text-center mb-12"&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;h1 class="text-4xl md:text-5xl font-bold text-stone-900"&gt;Grade 5: First Day Plan&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;p class="text-lg text-stone-600 mt-2"&gt;An interactive guide to building our community.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">        &lt;/header&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        &lt;div id="materials-section" class="mb-10 bg-white rounded-xl shadow-sm border border-stone-200"&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;button id="toggle-materials" class="w-full p-4 text-left font-semibold text-lg flex justify-between items-center text-stone-700"&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;span&gt;📋 View Required Materials&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;svg id="materials-arrow" class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"&gt;&lt;/path&gt;&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;/button&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;div id="materials-content" class="hidden p-6 border-t border-stone-200"&gt;</span></p>
+<p class="p1"><span class="s1">                 &lt;p class="mb-4 text-stone-600"&gt;Here are all the materials you'll need for a successful first day. Having these prepared will help everything run smoothly.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;ul class="grid grid-cols-1 md:grid-cols-2 gap-4 list-none"&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;li class="bg-stone-50 p-3 rounded-lg"&gt;Name tag cards, markers, and decorations&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;li class="bg-stone-50 p-3 rounded-lg"&gt;"Getting to Know You" Interview Sheets&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;li class="bg-stone-50 p-3 rounded-lg"&gt;Large poster paper or whiteboard&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;li class="bg-stone-50 p-3 rounded-lg"&gt;Pens/markers for the board&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;li class="bg-amber-50 p-3 rounded-lg col-span-1 md:col-span-2 font-semibold"&gt;Marshmallow Challenge Kits (1 per group)&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;li class="bg-stone-50 p-3 rounded-lg"&gt;20 sticks of uncooked spaghetti&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;li class="bg-stone-50 p-3 rounded-lg"&gt;1 yard of string&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;li class="bg-stone-50 p-3 rounded-lg"&gt;1 yard of masking tape&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;li class="bg-stone-50 p-3 rounded-lg"&gt;1 standard-sized marshmallow&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">        &lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        &lt;main class="relative pl-10 md:pl-16"&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;section id="welcome" class="mb-12 relative"&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;div class="timeline-line"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;div class="timeline-item relative bg-white p-6 rounded-xl shadow-sm border border-stone-200"&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;p class="text-sm font-medium text-blue-600"&gt;MORNING&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;h2 class="text-2xl font-bold mt-1"&gt;Welcome &amp; Opening Circle&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;p class="text-stone-600 mt-2"&gt;Start the day by creating a warm, welcoming atmosphere. Your personal introduction sets the tone for the entire year.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;ul class="mt-4 space-y-2 text-stone-700"&gt;</span></p>
+<p class="p1"><span class="s1">                        &lt;li&gt;&lt;span class="font-semibold"&gt;1. Greeting:&lt;/span&gt; Greet each student at the door by name with a smile.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                        &lt;li&gt;&lt;span class="font-semibold"&gt;2. Seating:&lt;/span&gt; Let students choose their own seats in the pre-arranged clusters.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                        &lt;li&gt;&lt;span class="font-semibold"&gt;3. Introduction:&lt;/span&gt; Share your brief, personal intro to connect with the students.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">            &lt;section id="nametag" class="mb-12 relative"&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;div class="timeline-line"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;div class="timeline-item relative bg-white p-6 rounded-xl shadow-sm border border-stone-200"&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;p class="text-sm font-medium text-blue-600"&gt;ACTIVITY 1 (~20 MIN)&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;h2 class="text-2xl font-bold mt-1"&gt;Create a Desk Name Tag&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;p class="text-stone-600 mt-2"&gt;A simple, creative task to help students personalize their space and settle in. It's also a great way for you to start learning names and personalities.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;div class="mt-4 bg-stone-50 p-4 rounded-lg"&gt;</span></p>
+<p class="p1"><span class="s1">                        &lt;p class="font-semibold"&gt;Instructions:&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                        &lt;p class="text-stone-700"&gt;Distribute name tag cards and art supplies. Encourage them to be creative and include things that represent them, like their favorite colors, hobbies, or symbols.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">            &lt;section id="pickup" class="mb-12 relative"&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;div class="timeline-line"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;div class="timeline-item relative bg-amber-100 p-6 rounded-xl shadow-sm border border-amber-200"&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;p class="text-sm font-medium text-amber-700"&gt;LOGISTICS (~30 MIN, at 10:30 AM)&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;h2 class="text-2xl font-bold mt-1 text-amber-900"&gt;School Materials Pickup&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;p class="text-amber-800 mt-2"&gt;An important logistical task. Use this as the first opportunity to model and practice orderly classroom procedures.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;ul class="mt-4 space-y-2 text-amber-800"&gt;</span></p>
+<p class="p1"><span class="s1">                        &lt;li&gt;&lt;span class="font-semibold"&gt;1. Give Clear Directions:&lt;/span&gt; Explain the process concisely before moving.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                        &lt;li&gt;&lt;span class="font-semibold"&gt;2. Guide the Process:&lt;/span&gt; Lead students through the pickup, reinforcing expectations for orderly conduct.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">            &lt;section id="challenge" class="mb-12 relative"&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;div class="timeline-line"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;div class="timeline-item relative bg-white p-6 rounded-xl shadow-sm border border-stone-200"&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;p class="text-sm font-medium text-blue-600"&gt;ACTIVITY 2 (~60 MIN)&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;h2 class="text-2xl font-bold mt-1"&gt;The Marshmallow Challenge&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;p class="text-stone-600 mt-2"&gt;A classic team-building activity that serves as a perfect, energizing break after the logistical task. It emphasizes creativity, perseverance, and collaboration.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;div class="mt-4 flex flex-col sm:flex-row gap-3"&gt;</span></p>
+<p class="p1"><span class="s1">                        &lt;button onclick="openModal('challenge-rules')" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg w-full sm:w-auto hover:bg-blue-600 transition-colors"&gt;📜 View Rules&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1">                        &lt;button onclick="openModal('debrief-questions')" class="bg-stone-200 text-stone-800 font-semibold py-2 px-4 rounded-lg w-full sm:w-auto hover:bg-stone-300 transition-colors"&gt;🤔 Debriefing Questions&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">            &lt;section id="interviews" class="mb-12 relative"&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;div class="timeline-line"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;div class="timeline-item relative bg-white p-6 rounded-xl shadow-sm border border-stone-200"&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;p class="text-sm font-medium text-blue-600"&gt;ACTIVITY 3 (~45 MIN)&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;h2 class="text-2xl font-bold mt-1"&gt;Partner Interviews&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;p class="text-stone-600 mt-2"&gt;This activity helps students connect one-on-one and practice essential communication skills like listening and public speaking.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                     &lt;div class="mt-4 flex"&gt;</span></p>
+<p class="p1"><span class="s1">                        &lt;button onclick="openModal('interview-sheet')" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors"&gt;📄 View Interview Sheet&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">            &lt;section id="values" class="mb-12 relative"&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;div class="timeline-line"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;div class="timeline-item relative bg-white p-6 rounded-xl shadow-sm border border-stone-200"&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;p class="text-sm font-medium text-blue-600"&gt;ACTIVITY 4 (~45 MIN)&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;h2 class="text-2xl font-bold mt-1"&gt;Our Classroom Values&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;p class="text-stone-600 mt-2"&gt;Co-create a Class Charter based on the school's core values. This gives students ownership over the classroom culture and expectations.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;div class="mt-4 space-y-3"&gt;</span></p>
+<p class="p1"><span class="s1">                        &lt;p class="font-semibold"&gt;School's Core Values:&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                        &lt;div class="flex flex-wrap gap-2"&gt;</span></p>
+<p class="p1"><span class="s1">                            &lt;span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full"&gt;Respect&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1">                            &lt;span class="bg-emerald-100 text-emerald-800 text-sm font-medium px-3 py-1 rounded-full"&gt;Responsibility&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1">                            &lt;span class="bg-violet-100 text-violet-800 text-sm font-medium px-3 py-1 rounded-full"&gt;Integrity&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1">                            &lt;span class="bg-amber-100 text-amber-800 text-sm font-medium px-3 py-1 rounded-full"&gt;Perseverance&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1">                            &lt;span class="bg-pink-100 text-pink-800 text-sm font-medium px-3 py-1 rounded-full"&gt;Creativity&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1">                        &lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">                        &lt;p class="pt-2"&gt;&lt;span class="font-semibold"&gt;Process:&lt;/span&gt; Brainstorm what each value looks, sounds, and feels like. Then, turn those ideas into positive "I can..." statements for your Class Charter.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">            &lt;section id="closing" class="relative"&gt;</span></p>
+<p class="p1"><span class="s1">                 &lt;div class="timeline-item relative bg-white p-6 rounded-xl shadow-sm border border-stone-200"&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;p class="text-sm font-medium text-blue-600"&gt;END OF DAY&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;h2 class="text-2xl font-bold mt-1"&gt;Closing Circle &amp; Reflection&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;p class="text-stone-600 mt-2"&gt;End the day on a positive and reflective note, reinforcing the sense of community you've started to build.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;div class="mt-4 bg-stone-50 p-4 rounded-lg"&gt;</span></p>
+<p class="p1"><span class="s1">                        &lt;p class="font-semibold"&gt;Reflection Question:&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                        &lt;p class="text-stone-700"&gt;"What's one thing you are proud of from our first day?"&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">                    &lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;/section&gt;</span></p>
+<p class="p1"><span class="s1">        &lt;/main&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">    &lt;!-- Modals --&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;div id="modal-container" class="fixed inset-0 z-50 flex items-center justify-center p-4"&gt;</span></p>
+<p class="p1"><span class="s1">        &lt;!-- Challenge Rules Modal --&gt;</span></p>
+<p class="p1"><span class="s1">        &lt;div id="challenge-rules" class="hidden"&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;h3 class="text-xl font-bold text-stone-900 mb-4"&gt;Marshmallow Challenge Rules&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;ol class="list-decimal list-inside space-y-2 text-stone-700"&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;Build the tallest &lt;span class="font-semibold"&gt;freestanding&lt;/span&gt; structure.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;The &lt;span class="font-semibold"&gt;entire marshmallow&lt;/span&gt; must be on top.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;Use only the materials from the kit: 20 sticks of spaghetti, 1 yard of tape, 1 yard of string.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;You can break spaghetti and cut the tape and string.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;The challenge lasts for &lt;span class="font-semibold"&gt;18 minutes&lt;/span&gt;.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;You cannot hold the structure when the time runs out.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;/ol&gt;</span></p>
+<p class="p1"><span class="s1">        &lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        &lt;!-- Debrief Questions Modal --&gt;</span></p>
+<p class="p1"><span class="s1">        &lt;div id="debrief-questions" class="hidden"&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;h3 class="text-xl font-bold text-stone-900 mb-4"&gt;Debriefing Questions&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;ul class="list-disc list-inside space-y-2 text-stone-700"&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;What was your team's plan or strategy?&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;What happened when your structure fell or didn't work? How did you react?&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;How did you make sure everyone's voice was heard?&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;What did you learn about your teammates during this challenge?&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;What would you do differently next time?&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1">        &lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        &lt;!-- Interview Sheet Modal --&gt;</span></p>
+<p class="p1"><span class="s1">        &lt;div id="interview-sheet" class="hidden"&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;h3 class="text-xl font-bold text-stone-900 mb-4"&gt;Partner Interview Sheet&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;p class="mb-4 text-stone-600"&gt;Ask your partner these questions and write down their answers.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;ol class="list-decimal list-inside space-y-2 text-stone-700"&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;What's one thing you are really good at?&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;What is a goal you have for this school year?&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;If you could have any superpower, what would it be and why?&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;What's a book you love or a show you enjoy watching?&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;What's one thing you're excited about this year?&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;What's one thing that makes you feel a little nervous about a new school year?&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;What's a hobby you have outside of school?&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">                &lt;li&gt;Is there anything else you want me to know about you?&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1">            &lt;/ol&gt;</span></p>
+<p class="p1"><span class="s1">        &lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">    &lt;script&gt;</span></p>
+<p class="p1"><span class="s1">        const materialsButton = document.getElementById('toggle-materials');</span></p>
+<p class="p1"><span class="s1">        const materialsContent = document.getElementById('materials-content');</span></p>
+<p class="p1"><span class="s1">        const materialsArrow = document.getElementById('materials-arrow');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        materialsButton.addEventListener('click', () =&gt; {</span></p>
+<p class="p1"><span class="s1">            const isHidden = materialsContent.classList.contains('hidden');</span></p>
+<p class="p1"><span class="s1">            if (isHidden) {</span></p>
+<p class="p1"><span class="s1">                materialsContent.classList.remove('hidden');</span></p>
+<p class="p1"><span class="s1">                materialsArrow.style.transform = 'rotate(180deg)';</span></p>
+<p class="p1"><span class="s1">            } else {</span></p>
+<p class="p1"><span class="s1">                materialsContent.classList.add('hidden');</span></p>
+<p class="p1"><span class="s1">                materialsArrow.style.transform = 'rotate(0deg)';</span></p>
+<p class="p1"><span class="s1">            }</span></p>
+<p class="p1"><span class="s1">        });</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        const modalContainer = document.getElementById('modal-container');</span></p>
+<p class="p1"><span class="s1">        let activeModalContent = null;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        function openModal(modalId) {</span></p>
+<p class="p1"><span class="s1">            const modalContentSource = document.getElementById(modalId);</span></p>
+<p class="p1"><span class="s1">            if (!modalContentSource) return;</span></p>
+<p class="p1"><span class="s1">            </span></p>
+<p class="p1"><span class="s1">            if(activeModalContent) {</span></p>
+<p class="p1"><span class="s1">                modalContainer.removeChild(activeModalContent);</span></p>
+<p class="p1"><span class="s1">            }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">            const backdrop = document.createElement('div');</span></p>
+<p class="p1"><span class="s1">            backdrop.className = 'modal-backdrop fixed inset-0 bg-black bg-opacity-50 opacity-0';</span></p>
+<p class="p1"><span class="s1">            </span></p>
+<p class="p1"><span class="s1">            const contentWrapper = document.createElement('div');</span></p>
+<p class="p1"><span class="s1">            contentWrapper.className = 'modal-content bg-white rounded-xl shadow-2xl p-6 w-full max-w-lg relative transform scale-95';</span></p>
+<p class="p1"><span class="s1">            contentWrapper.innerHTML = modalContentSource.innerHTML;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">            const closeButton = document.createElement('button');</span></p>
+<p class="p1"><span class="s1">            closeButton.innerHTML = '&amp;times;';</span></p>
+<p class="p1"><span class="s1">            closeButton.className = 'absolute top-2 right-4 text-3xl text-stone-500 hover:text-stone-800';</span></p>
+<p class="p1"><span class="s1">            </span></p>
+<p class="p1"><span class="s1">            contentWrapper.appendChild(closeButton);</span></p>
+<p class="p1"><span class="s1">            modalContainer.appendChild(backdrop);</span></p>
+<p class="p1"><span class="s1">            modalContainer.appendChild(contentWrapper);</span></p>
+<p class="p1"><span class="s1">            </span></p>
+<p class="p1"><span class="s1">            activeModalContent = contentWrapper;</span></p>
+<p class="p1"><span class="s1">            </span></p>
+<p class="p1"><span class="s1">            setTimeout(() =&gt; {</span></p>
+<p class="p1"><span class="s1">                backdrop.classList.remove('opacity-0');</span></p>
+<p class="p1"><span class="s1">                contentWrapper.classList.remove('scale-95');</span></p>
+<p class="p1"><span class="s1">            }, 10);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">            const closeModal = () =&gt; {</span></p>
+<p class="p1"><span class="s1">                backdrop.classList.add('opacity-0');</span></p>
+<p class="p1"><span class="s1">                contentWrapper.classList.add('scale-95');</span></p>
+<p class="p1"><span class="s1">                setTimeout(() =&gt; {</span></p>
+<p class="p1"><span class="s1">                    if (modalContainer.contains(backdrop)) modalContainer.removeChild(backdrop);</span></p>
+<p class="p1"><span class="s1">                    if (modalContainer.contains(contentWrapper)) modalContainer.removeChild(contentWrapper);</span></p>
+<p class="p1"><span class="s1">                    activeModalContent = null;</span></p>
+<p class="p1"><span class="s1">                }, 300);</span></p>
+<p class="p1"><span class="s1">            };</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">            backdrop.addEventListener('click', closeModal);</span></p>
+<p class="p1"><span class="s1">            closeButton.addEventListener('click', closeModal);</span></p>
+<p class="p1"><span class="s1">        }</span></p>
+<p class="p1"><span class="s1">    &lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+</body>
+</html>
